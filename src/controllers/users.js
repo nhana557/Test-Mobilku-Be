@@ -16,6 +16,16 @@ const controllersUser = {
             console.log(error)
         }
     },
+    getById : async(req, res, next) =>{
+        try {
+            const id = req.params.id
+            const { rows } = await modelUser.selectById(id)
+            console.log(rows)
+            common.response(res, rows[0], "Get data By id success", 200)
+        } catch (error) {
+            console.log(error)
+        }
+    },
     createUser: async (req, res, next) => {
         try {
             const {name, mobile, usia, tanggal_lahir, address, education  } = req.body;
@@ -40,7 +50,7 @@ const controllersUser = {
                 image: fileImg ? `${process.env.API_BACKEND}img/${filename}` : null
             }
             modelUser.create(data)
-            common.response(res, data, "updated success", 201 )
+            common.response(res, data, "created success", 201 )
 
         } catch (error) {
             console.log("hallo", error)
