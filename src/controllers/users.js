@@ -94,14 +94,14 @@ const controllersUser = {
             console.log(data)
             if(!data){
                 common.response(res, null, "ID Not Found", 403 )
-
+                return;
             }
             const { name, mobile, usia, tanggal_lahir, address, education } = req.body;
             const fileImg1 = req.files.image[0].path
             const fileImg2 = req.files.image[1] ? req.files.image[1].path : undefined;
             const filename = `watermarked-${Date.now()}.jpg`
             let datas = {
-                id: uuidv4(),
+                id,
                 name, mobile, usia, tanggal_lahir, address, education,
             }
             if(fileImg1){
@@ -148,7 +148,7 @@ const controllersUser = {
                 }
                 console.log(datas)
                 await modelUser.update(datas)
-                common.response(res, datas, "created success", 201 )
+                common.response(res, datas, "updated success", 201 )
         } catch (error) {
             console.log(error)
         }
