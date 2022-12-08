@@ -42,7 +42,7 @@ const controllersUser = {
                 date_of_birth,
                 address,
                 education,
-                image: fileImg ? `${process.env.API_BACKEND}/img/${filename}` : null
+                image: fileImg ? `${process.env.API_BACKEND}img/${filename}` : null
             }
             modelUser.create(data)
             common.response(res, data, "updated success", 201 )
@@ -85,7 +85,7 @@ const controllersUser = {
                 date_of_birth,
                 address,
                 education,
-                image: fileImg ? `${process.env.API_BACKEND}/img/${filename}` : null
+                image: fileImg ? `${process.env.API_BACKEND}img/${filename}` : null
             }
             modelUser.update(datas)
             common.response(res, datas, "updated success", 200 )
