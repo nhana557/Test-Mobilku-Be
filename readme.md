@@ -9,7 +9,9 @@
 | [CORS] | npm i cors |
 | [Uuid] | npm i uuid |
 | [Multer] | npm i multer |
-| [Helmet] | npm i helmet|
+| [Helmet] | npm i helmet|        
+| [Cloudinary] | npm i cloudinary|        
+| [Sharp] | npm i sharp|        
 
 
 
@@ -22,6 +24,8 @@
 [Uuid]: <https://www.npmjs.com/package/uuid>
 [Multer]: <https://www.npmjs.com/package/multer>
 [Helmet]: <https://www.npmjs.com/package/helmet>
+[Cloudinary]: <https://www.npmjs.com/package/cloudinary>
+[Sharp]: <https://www.npmjs.com/package/sharp>
 
 
 
