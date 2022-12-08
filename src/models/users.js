@@ -24,9 +24,9 @@ const selectById = (id) =>{
     })
 }
 
-const create = ({id, name, age, date_of_birth, image, noWhatsapp, address, education}) =>{
+const create = ({id, name, usia, tanggal_lahir, image, mobile, address, education}) =>{
     return new Promise((resolve, reject) =>{
-        db.query(`INSERT INTO users(id, nama, umur, tanggal_lahir, photo, no_whatsapp, asal_kota, pendidikan_terakir) VALUES($1, $2, $3, $4, $5, $6, $7, $8)`,[id, name, age, date_of_birth, image, noWhatsapp, address, education], (err, result) =>{
+        db.query(`INSERT INTO users(id, nama, usia, tanggal_lahir, photo, mobile, asal_kota, education) VALUES($1, $2, $3, $4, $5, $6, $7, $8)`,[id, name, age, date_of_birth, image, noWhatsapp, address, education], (err, result) =>{
             if(!err){
                 resolve(result)
             }else{

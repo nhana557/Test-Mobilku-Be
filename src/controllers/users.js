@@ -18,7 +18,7 @@ const controllersUser = {
     },
     createUser: async (req, res, next) => {
         try {
-            const { name, noWhatsapp, age, date_of_birth, address, education } = req.body;
+            const {name, mobile, usia, tanggal_lahir, address, education  } = req.body;
             const fileImg = req.files.image[0].path
             const filename = `watermarked-${Date.now()}.jpg`
             if(fileImg){
@@ -36,12 +36,7 @@ const controllersUser = {
             }
             const data = {
                 id: uuidv4(),
-                name,
-                noWhatsapp,
-                age,
-                date_of_birth,
-                address,
-                education,
+                name, mobile, usia, tanggal_lahir, address, education,
                 image: fileImg ? `${process.env.API_BACKEND}img/${filename}` : null
             }
             modelUser.create(data)
