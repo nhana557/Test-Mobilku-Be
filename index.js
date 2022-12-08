@@ -3,10 +3,11 @@ const express = require('express');
 const app = express()
 const Router = require('./src/routers/users')
 const createError = require('http-errors')
-
+const cors = require("cors")
 
 app.use(express.urlencoded({ extended: true}))
-
+app.use(express.json())
+app.use(cors())
 app.use("/", Router)
 app.use("/img", express.static(`./src/uploads`))
 
