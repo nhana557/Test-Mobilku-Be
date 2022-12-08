@@ -79,7 +79,6 @@ const controllersUser = {
             }
             const datas = {
                 id,
-                name,
                 name, mobile, usia, tanggal_lahir, address, education,
                 image: fileImg ? `${process.env.API_BACKEND}img/${filename}` : null
             }
