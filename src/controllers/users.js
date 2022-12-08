@@ -61,7 +61,7 @@ const controllersUser = {
                 common.response(res, null, "ID Not Found", 403 )
 
             }
-            const { name, noWhatsapp, age, date_of_birth, address, education } = req.body;
+            const { name, mobile, usia, tanggal_lahir, address, education } = req.body;
             const fileImg = req.files.image[0].path
             const filename = `watermarked-${Date.now()}.jpg`
             if(fileImg){
@@ -80,11 +80,7 @@ const controllersUser = {
             const datas = {
                 id,
                 name,
-                noWhatsapp,
-                age,
-                date_of_birth,
-                address,
-                education,
+                name, mobile, usia, tanggal_lahir, address, education,
                 image: fileImg ? `${process.env.API_BACKEND}img/${filename}` : null
             }
             modelUser.update(datas)

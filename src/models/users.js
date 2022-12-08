@@ -36,9 +36,9 @@ const create = ({id, name, age, date_of_birth, image, noWhatsapp, address, educa
     })
 }
 
-const update = ({id, name, age, date_of_birth, image, noWhatsapp, address, education}) =>{
+const update = ({id, name, usia, tanggal_lahir, image, mobile, address, education}) =>{
     return new Promise((resolve, reject) =>{
-        db.query(`UPDATE users SET nama = $1, usia= $2, tanggal_lahir= $3, photo=$4, mobile=$5, asal_kota=$6, education=$7 WHERE id=$8` ,[ name, age, date_of_birth, image, noWhatsapp, address, education, id], (err, result) =>{
+        db.query(`UPDATE users SET nama = $1, usia= $2, tanggal_lahir= $3, photo=$4, mobile=$5, asal_kota=$6, education=$7 WHERE id=$8` ,[ name, usia, tanggal_lahir, image, mobile, address, education, id], (err, result) =>{
             if(!err){
                 resolve(result)
             }else{
