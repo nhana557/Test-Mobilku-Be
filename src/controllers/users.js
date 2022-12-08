@@ -30,13 +30,13 @@ const controllersUser = {
         try {
             const {name, mobile, usia, tanggal_lahir, address, education  } = req.body;
             const fileImg = req.files.image[0].path
-            console.log(fileImg)
             const filename = `watermarked-${Date.now()}.jpg`
             if(fileImg){
                 Sharp(fileImg)
                     .rotate()
                     .resize({
-                        width: 500
+                        width: 500,
+                        height: 500,
                     })
                     .jpeg({ mozjpeg: true })
                     .toBuffer()
@@ -54,7 +54,7 @@ const controllersUser = {
             common.response(res, data, "created success", 201 )
 
         } catch (error) {
-            console.log("hallo", error)
+            console.log( error)
         }
     },
     update: async(req, res, next) =>{
