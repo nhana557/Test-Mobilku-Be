@@ -4,7 +4,7 @@ const { writeFile } = require("fs/promises")
 const { resolve } = require("path")
 const Sharp = require('sharp')
 const common = require('../helper/common')
-const cloudinary = require('../middlewares/caludinary')
+const cloudinary = require('../middlewares/cloudinary')
 
 const controllersUser = {
     getUser: async (req, res, next) => {
